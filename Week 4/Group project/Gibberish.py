@@ -1,15 +1,22 @@
-vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
-var = 1
+#Assignment 1: Gibberish game
+#Written by Hugh O'Carroll-Macri, C17316046
+#11/10/2019
 x = True
-y = True
-gibberish = ""
-
 while (x==True):
-    print("This is a gibberish translator")
+    vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
+    var = 1
+    y = True
+    gibberish = ""
+
+    #Explanation of the rules
+    print("You must enter a sentence and then you will be asked to enter two syllables,")
+    print("the first vowel in your sentence will have your first syllable added on to it,")
+    print("after that each vowel will be replaced by your second syllable and then your new")
+    print("gibberish word will be presented to you")
 
     while var == 1:
         #User enters sentence and syllables
-        original = input("Give me a word please : ")
+        original = input("Please enter your sentence: ")
 
         syl1 = input("Enter the first syllable: ")
 
@@ -21,12 +28,23 @@ while (x==True):
         else:
             var += 2
 
-    #conversion process
+    #First vowel has first syllable added onto it
     for i in range(len(original)):
         char = original[i]
         gibberish += char
         if char in vowels:
             gibberish += syl1
+            x = i + 1
+            break
+
+    #Every other vowel gets the second syllable added to it
+    for i in range(x, len(original)):
+        char = original[i]
+        gibberish += char
+        if char in vowels:
+            gibberish += syl2
+
+    #Presenting original and new sentence
     print("You originally entered: ", original)
     print("Your new word is: ", gibberish)
 
