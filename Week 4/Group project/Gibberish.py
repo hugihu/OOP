@@ -34,11 +34,11 @@ while (x==True):
         gibberish += char
         if char in vowels:
             gibberish += syl1
-            x = i + 1
+            y = i+1
             break
 
     #Every other vowel gets the second syllable added to it
-    for i in range(x, len(original)):
+    for i in range(y, len(original)):
         char = original[i]
         gibberish += char
         if char in vowels:
