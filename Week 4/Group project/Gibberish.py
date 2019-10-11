@@ -17,9 +17,7 @@ while (x==True):
     while var == 1:
         #User enters sentence and syllables
         original = input("Please enter your sentence: ")
-
         syl1 = input("Enter the first syllable: ")
-
         syl2 = input("Enter the second syllable: ")
 
         #Check to see if string is valid
