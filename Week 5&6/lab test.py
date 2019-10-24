@@ -5,8 +5,8 @@
 
 import math
 
-def calculation(n, r):
-    return int((math.factorial(n)) / ((math.factorial(r)) * math.factorial(n - r)))
+def calculation(a, b):
+    return int((math.factorial(a)) / ((math.factorial(b)) * math.factorial(a - b)))
 
 def make_new_row(rows):
     result = []
@@ -16,6 +16,7 @@ def make_new_row(rows):
             row.append(calculation(count, element))
         result.append(row)
     return result
+#Building each row
 
 x = 0
 
@@ -27,10 +28,19 @@ while x == 0:
         continue
     else:
         break
+#Asking user for how many rows they would like printed
+#Also error checking to make sure they enter a valid number
 
 print("Printing the list of rows on one line")
 print(make_new_row(user_row))
-print("Printing rows on own individual lines")
+#Prints list all on one line
 
+print("Printing rows on own individual lines")
 for row in make_new_row(user_row):
     print(row)
+#Printing rows on own individual lines
+
+print("Now printing without brackets or commas")
+print(''.join([str(row) for row in make_new_row(user_row)]))
+# Couldn't get the list to center properly
+
